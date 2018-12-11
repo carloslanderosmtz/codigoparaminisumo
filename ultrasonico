@@ -1,0 +1,12 @@
+Serial.println(distancia);
+}//miso lado las dos llantas//
+int cny = 0;
+int lectura;
+void setup() {
+  Serial.begin(9600);// put your setup code here, to run once:
+}
+
+void loop() {
+  lectura = analogRead(cny);
+  Serial.println(lectura);
+}
