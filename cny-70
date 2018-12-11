@@ -1,0 +1,23 @@
+int ledPin1 = 9;     
+int ledPin2 = 11;      
+int infraPin = A0;  
+int valorInfra = 0; 
+
+
+
+void setup() { 
+  pinMode(ledPin1, OUTPUT);    
+  pinMode(ledPin2, OUTPUT);    
+  pinMode(infraPin, INPUT);   
+} 
+
+
+void loop() { 
+  valorInfra = digitalRead(infraPin);  
+  digitalWrite(ledPin1, valorInfra);    
+                                      
+  valorInfra = !valorInfra;              
+  digitalWrite(ledPin2, valorInfra);    
+                                         
+}
+ 
