@@ -1,0 +1,27 @@
+int Valor = 0;
+int Sensor = 8;
+int lg= 13;
+int lr = 12;
+ 
+void setup(){
+  Serial.begin(9600);
+  pinMode(Sensor, INPUT);
+  pinMode(lg, OUTPUT);
+  pinMode(lr, OUTPUT);
+}
+ 
+void loop(){
+  Valor = digitalRead(Sensor);
+  Serial.println(Valor);
+  delay(100);
+  if (Valor == 0)
+  {
+    digitalWrite(lg, HIGH);
+    digitalWrite(lr, LOW);
+  }
+  else
+  {
+    digitalWrite(lg, LOW);
+    digitalWrite(lr, HIGH);
+  }
+}
