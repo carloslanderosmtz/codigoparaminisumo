@@ -1,0 +1,54 @@
+[4:57 PM, 12/3/2018] +52 1 81 8021 9763: int in3 = 3;
+int in4 = 4;
+int in1 = 8;
+int in2 = 9;
+int trig = 5;
+int echo = 6;
+float tiempo;
+float distancia;
+
+void setup() {
+  Serial.begin(9600);//monitor serial
+  //entradas y salidas
+  pinMode(in3, OUTPUT);
+  pinMode(in4, OUTPUT);
+  pinMode(in1, OUTPUT);
+  pinMode(in2, OUTPUT);
+  pinMode(trig, OUTPUT);//el trigger es salida 
+  pinMode(echo, INPUT);//el echo es entrada
+}
+
+void loop() {
+  digitalWrite(trig, LOW);
+  digitalWrite(trig, HIGH); //activar trigger
+  delayMicroseconds(10); // Wait for 10 microsecond(s)
+  digitalWrite(trig, LOW);
+  tiempo = pulseIn(echo, HIGH);
+  distancia = 0.0343 * tiempo / 2;
+  if (distancia > 400) {
+    distancia = 0;
+  }
+  if (distancia < 20){
+    digitalWrite(in3,LOW);
+    digitalWrite(in4,HIGH);
+    digitalWrite(in1,LOW);
+    digitalWrite(in2,HIGH);
+  }
+  else{
+    digitalWrite(in3,HIGH);
+    digitalWrite(in4,LOW);
+    digitalWrite(in1,LOW);
+    digitalWrite(in2,HIGH);
+  }
+      Serial.println(distancia);
+}//miso lado las dos llantas//
+[4:58 PM, 12/3/2018] +52 1 81 8021 9763: int cny = 0;
+int lectura;
+void setup() {
+  Serial.begin(9600);// put your setup code here, to run once:
+}
+
+void loop() {
+  lectura = analogRead(cny);
+  Serial.println(lectura);
+}
