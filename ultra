@@ -1,0 +1,45 @@
+[12:09 PM, 12/5/2018] +52 1 81 8021 9763: boolean linea(int pin) {
+  boolean lim;
+  int lect = analogRead(pin);
+  //Serial.println (lect);
+  if (lect > 50) {
+    lim = true;
+  }
+  else {
+    lim = false;
+  }
+  return lim;
+}
+[12:12 PM, 12/5/2018] +52 1 81 8021 9763: int cny1 = 0;
+int cny2 = 1;
+int cny3 = 2;
+int cny4 = 7;
+int ti, td, fd, fi;
+[12:13 PM, 12/5/2018] +52 1 81 8021 9763: void loop() {
+ti = linea(cny1);
+Serial.println(ti);
+[12:32 PM, 12/5/2018] +52 1 81 8021 9763: int cny1 = 0;
+int cny2 = 1;
+int cny3 = 2;
+int cny4 = 7;
+int ti, td, fd, fi;
+
+boolean linea(int pin) {
+  boolean lim;
+  int lect = analogRead(pin);
+  //Serial.println (lect);
+  if (lect > 50) {
+    lim = true;
+  }
+  else {
+    lim = false;
+  }
+  return lim;
+}
+void setup(){
+
+}
+void loop() {
+ti = linea(cny1);
+Serial.println(ti);
+}
