@@ -40,15 +40,4 @@ void loop() {
     digitalWrite(in1,LOW);
     digitalWrite(in2,HIGH);
   }
-      Serial.println(distancia);
-}//miso lado las dos llantas//
-[4:58 PM, 12/3/2018] +52 1 81 8021 9763: int cny = 0;
-int lectura;
-void setup() {
-  Serial.begin(9600);// put your setup code here, to run once:
-}
-
-void loop() {
-  lectura = analogRead(cny);
-  Serial.println(lectura);
-}
+      
